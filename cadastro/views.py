@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import PessoaFisica
+from .serializers import PessoaFisicaSerializer
 
-# Create your views here.
+class PessoaFisicaViewSet(ModelViewSet):
+    queryset = PessoaFisica.objects.all()
+    serializer_class = PessoaFisicaSerializer
