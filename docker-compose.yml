@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  cadastro:  # Serviço principal (Django)
+    build: ./
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app  # Monta o diretório local no contêiner
+    environment:  # Variáveis de ambiente
+      - DJANGO_SETTINGS_MODULE=pessoa.settings
